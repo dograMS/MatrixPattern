@@ -42,14 +42,23 @@
             x6ToolStripMenuItem = new ToolStripMenuItem();
             x7ToolStripMenuItem = new ToolStripMenuItem();
             x8ToolStripMenuItem = new ToolStripMenuItem();
+            menuStrip1 = new MenuStrip();
+            fileToolStripMenuItem = new ToolStripMenuItem();
+            setupToolStripMenuItem = new ToolStripMenuItem();
+            helpToolStripMenuItem = new ToolStripMenuItem();
+            statusStrip1 = new StatusStrip();
+            statusStrip = new ToolStripStatusLabel();
+            gridCoundStatuStrip = new ToolStripStatusLabel();
             toolStrip1.SuspendLayout();
+            menuStrip1.SuspendLayout();
+            statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // toolStrip1
             // 
             toolStrip1.ImageScalingSize = new Size(24, 24);
             toolStrip1.Items.AddRange(new ToolStripItem[] { startButton, resumeButton, stopButton, gridDropDown });
-            toolStrip1.Location = new Point(0, 0);
+            toolStrip1.Location = new Point(0, 33);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Size = new Size(1049, 34);
             toolStrip1.TabIndex = 0;
@@ -144,18 +153,74 @@
             x8ToolStripMenuItem.Text = "8x8";
             x8ToolStripMenuItem.Click += x8ToolStripMenuItem_Click;
             // 
+            // menuStrip1
+            // 
+            menuStrip1.ImageScalingSize = new Size(24, 24);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, setupToolStripMenuItem, helpToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(1049, 33);
+            menuStrip1.TabIndex = 1;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            fileToolStripMenuItem.Size = new Size(54, 29);
+            fileToolStripMenuItem.Text = "File";
+            // 
+            // setupToolStripMenuItem
+            // 
+            setupToolStripMenuItem.Name = "setupToolStripMenuItem";
+            setupToolStripMenuItem.Size = new Size(74, 29);
+            setupToolStripMenuItem.Text = "Setup";
+            // 
+            // helpToolStripMenuItem
+            // 
+            helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            helpToolStripMenuItem.Size = new Size(65, 29);
+            helpToolStripMenuItem.Text = "Help";
+            // 
+            // statusStrip1
+            // 
+            statusStrip1.ImageScalingSize = new Size(24, 24);
+            statusStrip1.Items.AddRange(new ToolStripItem[] { statusStrip, gridCoundStatuStrip });
+            statusStrip1.Location = new Point(0, 612);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Size = new Size(1049, 32);
+            statusStrip1.TabIndex = 2;
+            statusStrip1.Text = "statusStrip1";
+            // 
+            // statusStrip
+            // 
+            statusStrip.Name = "statusStrip";
+            statusStrip.Size = new Size(64, 25);
+            statusStrip.Text = "Status:";
+            // 
+            // gridCoundStatuStrip
+            // 
+            gridCoundStatuStrip.Name = "gridCoundStatuStrip";
+            gridCoundStatuStrip.Size = new Size(0, 25);
+            // 
             // MatrixPatternForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1049, 644);
+            Controls.Add(statusStrip1);
             Controls.Add(toolStrip1);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
             Name = "MatrixPatternForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Matrix Printer";
             Paint += onPaint;
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -176,5 +241,12 @@
         private ToolStripMenuItem x6ToolStripMenuItem;
         private ToolStripMenuItem x7ToolStripMenuItem;
         private ToolStripMenuItem x8ToolStripMenuItem;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem fileToolStripMenuItem;
+        private ToolStripMenuItem setupToolStripMenuItem;
+        private ToolStripMenuItem helpToolStripMenuItem;
+        private StatusStrip statusStrip1;
+        private ToolStripStatusLabel statusStrip;
+        private ToolStripStatusLabel gridCoundStatuStrip;
     }
 }

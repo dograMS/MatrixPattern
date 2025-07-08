@@ -48,7 +48,7 @@ namespace MatrixPattern
                 while (true)
                 {
                     drawMatrix(i, i);
-
+                    gridCoundStatuStrip.Text = "Grid Count: " + i; 
                     Size = Math.Min(m_Rows, m_Cols);
                     Size = Math.Max(Size, 2);
                     i = CircularIncrement(2, Size, i);

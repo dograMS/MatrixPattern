@@ -200,7 +200,8 @@
             // gridCoundStatuStrip
             // 
             gridCoundStatuStrip.Name = "gridCoundStatuStrip";
-            gridCoundStatuStrip.Size = new Size(0, 25);
+            gridCoundStatuStrip.Size = new Size(107, 25);
+            gridCoundStatuStrip.Text = "Grid Count: 0";
             // 
             // MatrixPatternForm
             // 

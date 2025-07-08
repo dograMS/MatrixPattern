@@ -7,8 +7,9 @@ namespace MatrixPattern
     {
         public MatrixPatternForm()
         {
-            Init();
             InitializeComponent();
+            Init();
+            
         }
 
         public void Init()
@@ -20,11 +21,14 @@ namespace MatrixPattern
             m_Cols = 2;
 
             logger = new Log();
+            statusStrip.Text = "Status: Ready";
         }
+
+
 
         public void onPaint(object sender, EventArgs e)
         {
-            //drawMatrix(m_Rows, m_Cols);
+            
         }
 
         private void startButton_Click(object sender, EventArgs e)
@@ -48,14 +52,23 @@ namespace MatrixPattern
                 while (true)
                 {
                     drawMatrix(i, i);
-                    gridCoundStatuStrip.Text = "Grid Count: " + i; 
+                    gridCoundStatuStrip.Text = "Grid Count: " + i;
+                    if(run)
+                    {
+                        statusStrip.Text = "Status: Running";
+                    }
                     Size = Math.Min(m_Rows, m_Cols);
                     Size = Math.Max(Size, 2);
                     i = CircularIncrement(2, Size, i);
 
                     for (int it = 0; it < 10 || !run; it++)
                     {
-                        Thread.Sleep(50);
+                        if (!run)
+                        {
+                            statusStrip.Text = "Status: Stopped";
+                        }
+                        
+                            Thread.Sleep(50);
                     }
 
                     this.Refresh();
